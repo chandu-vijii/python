@@ -1,0 +1,12 @@
+def longest_common_prefix(strs):
+    if not strs:
+        return [""]  
+    strs.sort()
+    for i in range(len(strs[0])):
+        if strs[0][i] != strs[-1][i]:
+            return strs[0][:i]  
+    return [strs[""]]
+strs1 = ["flower", "flow", "flight"]
+strs2 = ["dog", "racecar", "car"]
+print("Test Case 1:", longest_common_prefix(strs1))
+print("Test Case 2:", longest_common_prefix(strs2))
