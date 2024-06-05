@@ -1,0 +1,12 @@
+def groupAnagrams(strs):
+    anagram_map = {}
+    for word in strs:
+        key = ''.join(sorted(word))
+        if key not in anagram_map:
+            anagram_map[key] = []
+        anagram_map[key].append(word)
+    return list(anagram_map.values())
+strs1 = ["eat", "tea", "tan", "ate", "nat", "bat"]
+print(groupAnagrams(strs1))  # Output: [["bat"], ["nat", "tan"], ["ate", "eat", "tea"]]
+strs2 = ["a"]
+print(groupAnagrams(strs2))  # Output: [["a"]]
